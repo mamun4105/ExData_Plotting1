@@ -1,5 +1,0 @@
-data <- read.table(file="household_power_consumption.txt", header = TRUE, sep = ";", col.names = colnames(read.table("household_power_consumption.txt", nrow = 1,   header = TRUE, sep=";")), skip = 66637, nrow = 2880, na.string = "?")
-data$new <- strptime(paste(data$Date, data$Time, sep=" "), format="%d/%m/%Y %H:%M:%S")
-png("plot2.png",width=400,height=400,units="px")
-plot(y = data$Global_active_power, x = data$new, type = "l", ylab = "Global Active Power(kilowatts)", xlab = "")
-dev.off()
